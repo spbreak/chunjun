@@ -1,0 +1,60 @@
+{
+  "job": {
+    "content": [
+      {
+        "reader": {
+          "name": "filejsonreader",
+          "parameter": {
+            "column": [
+              {
+                "name": "id",
+                "type": "int",
+                "beginindex": "0",
+                "endindex": "3"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "beginindex": "4",
+                "endindex": "5"
+              }
+            ],
+            "path": "C:\\Users\\52710\\IdeaProjects\\flinkx\\data\\fixfile_two_column.txt"
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "root",
+            "password": "123456",
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://cdhnode40:3306/test?useSSL=false&allowPublicKeyRetrieval=true",
+                "table": [
+                  "flink_target_two_column"
+                ]
+              }
+            ],
+            "writeMode": "insert",
+            "column": [
+              {
+                "name": "id",
+                "type": "int"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "setting": {
+      "speed": {
+        "channel": 1,
+        "bytes": 0
+      }
+    }
+  }
+}

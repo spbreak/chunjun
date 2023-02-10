@@ -24,18 +24,15 @@ import com.dtstack.chunjun.cdc.ddl.definition.ColumnOperator;
 import com.dtstack.chunjun.cdc.ddl.definition.DataBaseOperator;
 import com.dtstack.chunjun.cdc.ddl.definition.DdlOperator;
 import com.dtstack.chunjun.cdc.ddl.definition.TableOperator;
-import com.dtstack.chunjun.ddl.convent.mysql.parse.impl.ChunjunMySqlParserImpl;
 import com.dtstack.chunjun.ddl.parse.util.SqlNodeUtil;
 import com.dtstack.chunjun.mapping.MappingConf;
 import com.dtstack.chunjun.mapping.MappingRule;
 import com.dtstack.chunjun.throwable.ConventException;
 
-import org.apache.calcite.config.Lex;
 import org.apache.calcite.sql.SqlNode;
 import org.apache.calcite.sql.dialect.MysqlSqlDialect;
 import org.apache.calcite.sql.parser.SqlParser;
 import org.apache.calcite.sql.util.SqlVisitor;
-import org.apache.calcite.sql.validate.SqlConformanceEnum;
 
 import java.util.Collections;
 import java.util.List;
@@ -115,12 +112,13 @@ public class MysqlDdlConventImpl implements DdlConvent {
     }
 
     public SqlParser.Config getConfig() {
-        SqlParser.Config mysqlConfig =
-                SqlParser.config()
-                        // 定义解析工厂
-                        .withParserFactory(ChunjunMySqlParserImpl.FACTORY)
-                        .withConformance(SqlConformanceEnum.MYSQL_5)
-                        .withLex(Lex.MYSQL);
-        return mysqlConfig;
+        return null;
+        //        SqlParser.Config mysqlConfig =
+        //                SqlParser.config()
+        //                        // 定义解析工厂
+        //                        .withParserFactory(ChunjunMySqlParserImpl.FACTORY)
+        //                        .withConformance(SqlConformanceEnum.MYSQL_5)
+        //                        .withLex(Lex.MYSQL);
+        //        return mysqlConfig;
     }
 }

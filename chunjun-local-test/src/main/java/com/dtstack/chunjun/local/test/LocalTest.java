@@ -47,7 +47,12 @@ public class LocalTest {
         //        confProperties.setProperty("state.checkpoints.dir", "file:///ck");
         String userDir = System.getProperty("user.dir");
 
-        String jobPath = userDir + "/chunjun-examples/json/stream/stream.json";
+//        String jobPath = userDir + "/chunjun-examples/json/mysql/mysql_mysql_batch01.json";
+//        String jobPath = userDir + "/chunjun-examples/sql/file/file_mysql.sql";
+        //filejson
+//        String jobPath = userDir + "/chunjun-examples/sql/filejson/file_mysql.sql";
+//        String jobPath = userDir + "/chunjun-examples/json/mysql/file_mysql_batch02_one.json";
+        String jobPath = userDir + "/chunjun-examples/json/mysql/file_mysql_batch02_two.json";
         String chunjunDistDir = userDir + "/start-chunjun-dist";
         String s = "";
 

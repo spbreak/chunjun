@@ -67,6 +67,7 @@
 
 		<!--File-->
 		<module>chunjun-connector-file</module>
+		<module>chunjun-connector-file-json</module>		
 		<module>chunjun-connector-filesystem</module>
 		<module>chunjun-connector-ftp</module>
 		<module>chunjun-connector-hdfs</module>

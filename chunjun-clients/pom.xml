@@ -217,6 +217,13 @@
 			<artifactId>flink-json</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
+		
+		<!-- ftp 引入 flink-csv -->
+		<dependency>
+			<groupId>com.dtstack.chunjun</groupId>
+			<artifactId>chunjun-connector-ftp</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 	</dependencies>
 

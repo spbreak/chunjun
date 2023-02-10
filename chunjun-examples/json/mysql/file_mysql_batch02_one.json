@@ -1,0 +1,49 @@
+{
+  "job": {
+    "content": [
+      {
+        "reader": {
+          "name": "filejsonreader",
+          "parameter": {
+            "column": [
+              {
+                "name": "id",
+                "type": "int"
+              }
+            ],
+            "path": "C:\\Users\\52710\\IdeaProjects\\flinkx\\data\\data02_one_column.csv",
+            "format": "csv"
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "username": "root",
+            "password": "123456",
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://cdhnode40:3306/test?useSSL=false&allowPublicKeyRetrieval=true",
+                "table": [
+                  "flink_target_one_column"
+                ]
+              }
+            ],
+            "writeMode": "insert",
+            "column": [
+              {
+                "name": "id",
+                "type": "int"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "setting": {
+      "speed": {
+        "channel": 1,
+        "bytes": 0
+      }
+    }
+  }
+}

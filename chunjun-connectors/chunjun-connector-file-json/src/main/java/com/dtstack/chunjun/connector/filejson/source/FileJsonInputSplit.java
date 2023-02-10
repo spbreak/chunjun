@@ -15,17 +15,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.dtstack.chunjun.ddl.convent;
 
-import com.dtstack.chunjun.cdc.DdlRowDataBuilder;
+package com.dtstack.chunjun.connector.filejson.source;
 
-public class Util {
+import org.apache.flink.core.io.InputSplit;
 
-    public static DdlRowDataBuilder mockRowDataBuilder(String sql, String database, String table) {
-        return DdlRowDataBuilder.builder()
-                .setLsn("")
-                .setTableName(table)
-                .setDatabaseName(database)
-                .setContent(sql);
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @program chunjun
+ * @author: xiuzhu
+ * @create: 2021/06/24
+ */
+public class FileJsonInputSplit implements InputSplit {
+
+    private int splitNumber;
+    private List<String> paths = new ArrayList<>();
+
+    public FileJsonInputSplit(int splitNumber) {
+        this.splitNumber = splitNumber;
+    }
+
+    @Override
+    public int getSplitNumber() {
+        return splitNumber;
+    }
+
+    public List<String> getPaths() {
+        return paths;
+    }
+
+    public void setPaths(List<String> paths) {
+        this.paths = paths;
     }
 }

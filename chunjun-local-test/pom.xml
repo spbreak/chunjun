@@ -266,6 +266,11 @@
 		</dependency>
 		<dependency>
 			<groupId>com.dtstack.chunjun</groupId>
+			<artifactId>chunjun-connector-file-json</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dtstack.chunjun</groupId>
 			<artifactId>chunjun-connector-ftp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
